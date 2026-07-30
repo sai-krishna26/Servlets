@@ -17,11 +17,46 @@ public class OrderServlet extends GenericServlet {
         String item = servletRequest.getParameter("item");
         String quantity = servletRequest.getParameter("quantity");
         String address = servletRequest.getParameter("address");
-        System.out.println("orderFrom : " + orderFrom);
-        System.out.println("item : " + item);
-        System.out.println("quantity : " + quantity);
-        System.out.println("address : " + address);
 
+        if(orderFrom==null||orderFrom.trim().isEmpty())
+        {
+            throw new ServletException("orderFrom is missing");
+        }
+        else
+        {
+            System.out.println("orderFrom : " + orderFrom);
+        }
+
+        if(item==null||item.trim().isEmpty())
+        {
+            throw new ServletException("item is missing");
+        }
+        else
+        {
+            System.out.println("item : " + item);
+        }
+
+        if(quantity==null||quantity.trim().isEmpty())
+        {
+            throw new ServletException("quantity should not be empty");
+        }
+        else
+        {
+            int qnt=Integer.parseInt(quantity);
+            if(qnt<=0)
+            {
+                throw new ServletException("quantity should be greater than 0");
+            }
+            System.out.println("quantity : " + quantity);
+        }
+
+        if(address==null||address.length()<=5||address.trim().isEmpty())
+        {
+            throw new ServletException("address is missing or not valid");
+        }
+        else {
+            System.out.println("address : " + address);
+        }
         servletResponse.setContentType("text/html");
         PrintWriter out =servletResponse.getWriter();
         out.println("<html>");
