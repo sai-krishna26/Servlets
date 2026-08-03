@@ -14,7 +14,7 @@ public class BookingServlet extends HttpServlet
 {
     public BookingServlet()
     {
-        System.out.println("running constructor in BookingServlet");
+        System.out.println("BookingServlet constructor is called");
     }
 
     @Override
@@ -36,7 +36,6 @@ public class BookingServlet extends HttpServlet
 
             LocalDate convertedInDate=LocalDate.parse(checkInDate);
             LocalDate convertedOutDate=LocalDate.parse(checkOutDate);
-            //int convertedRoomType=Integer.parseInt(roomType);
             int convertedGuestCount=Integer.parseInt(guestNo);
             double convertedAmount=Double.parseDouble(amount);
 
@@ -57,7 +56,6 @@ public class BookingServlet extends HttpServlet
         }
         out.println("</body>");
         out.println("</html>");
-
     }
 }
 

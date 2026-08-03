@@ -24,7 +24,14 @@
 
     <div class="mb-3">
         <label for="room" class="form-label">Room Type</label>
-        <input type="text" class="form-control" id="room" name="room">
+        <select class="form-select" id="room" name="room">
+            <option value="">Select Room Type</option>
+            <option value="Delux">Delux</option>
+            <option value="Extra Delux">Extra Delux</option>
+            <option value="Couple Friendly">Couple Friendly</option>
+            <option value="Brotherhood">Brotherhood</option>
+            <option value="Family">Family</option>
+        </select>
     </div>
 
     <div class="mb-3">
@@ -39,6 +46,11 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+<br>
+<br>
+<a href="index.html" class="btn btn-primary" role="button">-Home</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
