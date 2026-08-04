@@ -5,7 +5,31 @@
     <title>Product</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
+
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">MPA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="order.html">Order Food</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="booking.html">Book a Room</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" href="vehicleRegestration.html">Vehicle Registration</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<h3>Book your space</h3>
+<br>
 <form action="booking" method="post">
     <div class="mb-3">
         <label for="gname" class="form-label">Guest name</label>
@@ -26,8 +50,8 @@
         <label for="room" class="form-label">Room Type</label>
         <select class="form-select" id="room" name="room">
             <option value="">Select Room Type</option>
-            <option value="Delux">Delux</option>
-            <option value="Extra Delux">Extra Delux</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Extra Deluxe">Extra Deluxe</option>
             <option value="Couple Friendly">Couple Friendly</option>
             <option value="Brotherhood">Brotherhood</option>
             <option value="Family">Family</option>
@@ -36,21 +60,16 @@
 
     <div class="mb-3">
         <label for="guestno" class="form-label">No of Guests</label>
-        <input type="number" class="form-control" id="guestno" name="guestno">
+        <input type="number" class="form-control" placeholder="Eg.2" id="guestno" name="guestno">
     </div>
 
-    <div class="mb-3">
-        <label for="amount" class="form-label">Total amount</label>
-        <input type="number" class="form-control" id="amount" name="amount">
-    </div>
+<!--    <div class="mb-3">-->
+<!--        <label for="amount" class="form-label">Total amount</label>-->
+<!--        <input type="number" class="form-control" id="amount" name="amount">-->
+<!--    </div>-->
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Book now</button>
 </form>
-
-
-<br>
-<br>
-<a href="index.html" class="btn btn-primary" role="button">-Home</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

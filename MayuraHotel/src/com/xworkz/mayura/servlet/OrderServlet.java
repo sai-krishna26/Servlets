@@ -18,47 +18,62 @@ public class OrderServlet extends GenericServlet {
         String quantity = servletRequest.getParameter("quantity");
         String address = servletRequest.getParameter("address");
 
+        servletResponse.setContentType("text/html");
+        PrintWriter out = servletResponse.getWriter();
+
         if(orderFrom==null||orderFrom.trim().isEmpty())
         {
-            throw new ServletException("orderFrom is missing");
+            out.println("<html><body><h3>Error: orderFrom is missing</h3></body></html>");
+            return;
         }
         else
         {
-            System.out.println("orderFrom : " + orderFrom);
+            out.println("orderFrom : " + orderFrom);
         }
 
         if(item==null||item.trim().isEmpty())
         {
-            throw new ServletException("item is missing");
+            out.println("<html><body><h3>Error: item is missing</h3></body></html>");
+            return;
         }
         else
         {
-            System.out.println("item : " + item);
+            out.println("item : " + item);
         }
 
         if(quantity==null||quantity.trim().isEmpty())
         {
-            throw new ServletException("quantity should not be empty");
+            out.println("<html><body><h3>Error: quantity should not be empty</h3></body></html>");
+            return;
         }
         else
         {
             int qnt=Integer.parseInt(quantity);
             if(qnt<=0)
             {
-                throw new ServletException("quantity should be greater than 0");
+                out.println("<html><body><h3>Error: quantity should be greater than 0</h3></body></html>");
+                return;
             }
-            System.out.println("quantity : " + quantity);
+            out.println("quantity : " + quantity);
         }
 
         if(address==null||address.length()<=5||address.trim().isEmpty())
         {
-            throw new ServletException("address is missing or not valid");
+            out.println("<html><body><h3>Error: address is missing or not valid</h3></body></html>");
+            return;
         }
         else {
-            System.out.println("address : " + address);
+            out.println("address : " + address);
         }
-        servletResponse.setContentType("text/html");
-        PrintWriter out =servletResponse.getWriter();
+
+        out.println("<html>");
+        out.println("<body>");
+        out.println("<h3>Order from: " + orderFrom + "|| item: "+item+" Placed Successfully</h3>");
+        out.println("</body>");
+        out.println("</html>");
+
+//        servletResponse.setContentType("text/html");
+//        PrintWriter out =servletResponse.getWriter();
         out.println("<html>");
         out.println("<body>");
         out.println("<h3>Order from: " + orderFrom + "|| item: "+item+" Placed Successfully</h3>");
