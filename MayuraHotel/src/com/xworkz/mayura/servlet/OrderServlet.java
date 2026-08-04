@@ -71,13 +71,5 @@ public class OrderServlet extends GenericServlet {
         out.println("<h3>Order from: " + orderFrom + "|| item: "+item+" Placed Successfully</h3>");
         out.println("</body>");
         out.println("</html>");
-
-//        servletResponse.setContentType("text/html");
-//        PrintWriter out =servletResponse.getWriter();
-        out.println("<html>");
-        out.println("<body>");
-        out.println("<h3>Order from: " + orderFrom + "|| item: "+item+" Placed Successfully</h3>");
-        out.println("</body>");
-        out.println("</html>");
     }
 }
