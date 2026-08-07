@@ -1,5 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,13 +47,6 @@
 
 <h3>Register Here</h3>
 <br>
-
-<% if (request.getAttribute("message") != null) { %>
-    <div class="alert alert-success">
-        <%= request.getAttribute("message") %>
-    </div>
-<% } %>
-
 <form action="register" method="post">
 
     <div class="mb-3">
@@ -91,6 +82,9 @@
     <button type="submit" class="btn btn-primary">Register</button>
 
 </form>
+${message}
+<br>
+${important}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
