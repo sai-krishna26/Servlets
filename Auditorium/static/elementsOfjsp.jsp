@@ -35,14 +35,16 @@
     }
 %>
 
-<!--
 <%
     z++;
 %>
--->
+
 <h2>Result of x+y=<%=z%></h2>
 <h2>Result by add method=<%=add(10,20)%></h2>
 <hr>
+
+
+
 
 <!-- Page Directive = gives information about the page -->
 <!-- Directives(3)=page,include,taglib -->
@@ -60,35 +62,45 @@
 <hr>
 
 <!-- taglib = makes the taglib available in the jsp page-->
-<!--uri and prefix are 2 attributes of taglib
+<!--uri and prefix are 2 attributes of taglib-->
+
+<!--
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:forEach var="i" begin="1" end="5">
     <p>${i}</p>
 </c:forEach>
 -->
+
 <hr>
+
 
 <!-- JSP Actions = standard tags for runtime behavior -->
 <!-- jsp:include = includes another page at runtime -->
-<!-- <jsp:include page="sample.jsp" /> -->
+
+    <jsp:include page="sample.jsp" />
 <hr>
 
+
 <!-- jsp:forward = forwards request to another page -->
-<!-- <jsp:forward page="sample.jsp" /> -->
+
+    <jsp:forward page="sample.jsp" />
 <hr>
 
 <!-- jsp:param = passes parameters to included/forwarded page -->
-<!-- <jsp:include page="sample.jsp">
+    <jsp:include page="sample.jsp">
     <jsp:param name="title" value="JSP Actions" />
-</jsp:include> -->
+</jsp:include>
 <hr>
 
 <!-- jsp:useBean = instantiates or accesses a JavaBean -->
 <!-- <jsp:useBean id="user" class="com.example.User" /> -->
-<!-- <jsp:setProperty name="user" property="name" value="John" /> -->
-<!-- <jsp:getProperty name="user" property="name" /> -->
+    <jsp:setProperty name="user" property="name" value="John" />
+    <jsp:getProperty name="user" property="name" />
 <hr>
+
+
+
 
 </body>
 </html>
