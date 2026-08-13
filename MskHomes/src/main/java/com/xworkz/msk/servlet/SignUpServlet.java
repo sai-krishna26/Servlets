@@ -38,9 +38,9 @@ public class SignUpServlet extends HttpServlet {
 
         SignUpDto signUpDto=new SignUpDto(username,email,password,confirmPassword);
         System.out.println("SignUpDto:"+signUpDto);
-
-        RequestDispatcher dispatcher=req.getRequestDispatcher("signUp.jsp");
-        req.setAttribute("successMessage", "Sign Up Completed Successfully");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("signIn.jsp");
+//        RequestDispatcher dispatcher=req.getRequestDispatcher("signUp.jsp");
+//        req.setAttribute("successMessage", "Sign Up Completed Successfully");
+//        dispatcher.forward(req, resp);
     }
 }
