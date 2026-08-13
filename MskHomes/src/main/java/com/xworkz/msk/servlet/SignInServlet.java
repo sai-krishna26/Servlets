@@ -32,6 +32,5 @@ public class SignInServlet extends HttpServlet {
         req.setAttribute("successMessage", "Sign In Completed Successfully ");
 
         requestDispatcher.forward(req,resp);
-
     }
 }

@@ -28,6 +28,14 @@ public class SignUpServlet extends HttpServlet {
         String password=req.getParameter("password");
         String confirmPassword=req.getParameter("confirmPassword");
 
+        if(!password.equals(confirmPassword))
+        {
+            req.setAttribute("errorMessage","passwords do not match");
+            RequestDispatcher dispatcher=req.getRequestDispatcher("signUp.jsp");
+            dispatcher.forward(req, resp);
+            return;
+        }
+
         SignUpDto signUpDto=new SignUpDto(username,email,password,confirmPassword);
         System.out.println("SignUpDto:"+signUpDto);
 
