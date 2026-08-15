@@ -1,6 +1,8 @@
 package com.xworkz.msk.servlet;
 
 import com.xworkz.msk.dto.SignUpDto;
+import com.xworkz.msk.service.SignUpService;
+import com.xworkz.msk.service.SignUpServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,7 +39,11 @@ public class SignUpServlet extends HttpServlet {
         }
 
         SignUpDto signUpDto=new SignUpDto(username,email,password,confirmPassword);
-        System.out.println("SignUpDto:"+signUpDto);
+
+        SignUpService signUpService=new SignUpServiceImpl();
+        signUpService.validateAndSave(signUpDto);
+
+        //System.out.println("SignUpDto:"+signUpDto);
         resp.sendRedirect("signIn.jsp");
 //        RequestDispatcher dispatcher=req.getRequestDispatcher("signUp.jsp");
 //        req.setAttribute("successMessage", "Sign Up Completed Successfully");

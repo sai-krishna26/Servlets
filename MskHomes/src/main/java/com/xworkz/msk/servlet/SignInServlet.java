@@ -1,6 +1,8 @@
 package com.xworkz.msk.servlet;
 
 import com.xworkz.msk.dto.SignInDto;
+import com.xworkz.msk.service.SignInService;
+import com.xworkz.msk.service.SignInServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,7 +27,10 @@ public class SignInServlet extends HttpServlet {
         String password=req.getParameter("password");
 
         SignInDto signInDto=new SignInDto(username,password);
-        System.out.println("signInDto:"+signInDto);
+
+        SignInService signInService=new SignInServiceImpl();
+        signInService.validateAndSave(signInDto);
+        //System.out.println("signInDto:"+signInDto);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
 

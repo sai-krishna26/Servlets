@@ -6,7 +6,7 @@ public class FeedBackServiceImpl implements FeedBackService{
     @Override
     public boolean validateAndSave(FeedBackDto feedBackDto) {
         System.out.println("running validateAndSave in FeedBackServiceImpl");
-        System.out.println("FeedBackDto1:"+feedBackDto);
+        System.out.println("FeedBackDto:"+feedBackDto);
         return true;
     }
 }
