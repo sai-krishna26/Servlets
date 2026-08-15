@@ -40,8 +40,6 @@ public class SignUpDto implements Serializable {
         return "SignUpDto{" +
                 "username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", confirmPassword='" + confirmPassword + '\'' +
                 '}';
     }
 }

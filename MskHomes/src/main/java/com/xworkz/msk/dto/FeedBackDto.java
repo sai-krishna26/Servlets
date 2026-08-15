@@ -8,9 +8,9 @@ public class FeedBackDto implements Serializable {
     private String mobile;
     private String comment;
 
-    public FeedBackDto(String email, String name, String mobile, String comment) {
-        this.email = email;
+    public FeedBackDto(String name, String email, String mobile, String comment) {
         this.name = name;
+        this.email = email;
         this.mobile = mobile;
         this.comment = comment;
     }

@@ -26,7 +26,6 @@ public class SignInDto implements Serializable {
     public String toString() {
         return "SignInDto{" +
                 "username='" + username + '\'' +
-                ", password='" + password + '\''+
                 '}';
     }
 }

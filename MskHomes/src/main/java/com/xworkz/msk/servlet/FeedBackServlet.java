@@ -1,6 +1,8 @@
 package com.xworkz.msk.servlet;
 
 import com.xworkz.msk.dto.FeedBackDto;
+import com.xworkz.msk.service.FeedBackService;
+import com.xworkz.msk.service.FeedBackServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.Serializable;
 
 @WebServlet(loadOnStartup = 1,urlPatterns = "/feedback")
 public class FeedBackServlet extends HttpServlet {
@@ -27,7 +28,11 @@ public class FeedBackServlet extends HttpServlet {
         String comment=req.getParameter("comment");
 
         FeedBackDto feedBackDto=new FeedBackDto(name,email,mobile,comment);
-        System.out.println("FeedBackDto:"+feedBackDto);
+
+        FeedBackService feedBackService=new FeedBackServiceImpl();
+        feedBackService.validateAndSave(feedBackDto);
+
+        //System.out.println("FeedBackDto:"+feedBackDto);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("feedback.jsp");
         req.setAttribute("message","Thank you for your feedback");
