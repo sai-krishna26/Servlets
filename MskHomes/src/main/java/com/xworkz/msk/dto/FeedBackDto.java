@@ -1,7 +1,11 @@
 package com.xworkz.msk.dto;
 
-import java.io.Serializable;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.io.Serializable;
+@Setter
+@NoArgsConstructor
 public class FeedBackDto implements Serializable {
     private String email;
     private String name;

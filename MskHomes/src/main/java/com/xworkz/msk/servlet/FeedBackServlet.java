@@ -30,12 +30,20 @@ public class FeedBackServlet extends HttpServlet {
         FeedBackDto feedBackDto=new FeedBackDto(name,email,mobile,comment);
 
         FeedBackService feedBackService=new FeedBackServiceImpl();
-        feedBackService.validateAndSave(feedBackDto);
+        boolean save=feedBackService.validateAndSave(feedBackDto);
+        System.out.println("FeedBackDto: "+feedBackDto);
 
-        //System.out.println("FeedBackDto:"+feedBackDto);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("feedback.jsp");
-        req.setAttribute("message","Thank you for your feedback");
-        dispatcher.forward(req,resp);
+        if(save)
+        {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("feedback.jsp");
+            req.setAttribute("message","Thank you for your feedback");
+            dispatcher.forward(req,resp);
+        }
+        else {
+            System.out.println("feedback data is not saved");
+            RequestDispatcher dispatcher=req.getRequestDispatcher("feedback.jsp");
+            req.setAttribute("fmessage","Failed to save feedback");
+            dispatcher.forward(req,resp);
+        }
     }
 }

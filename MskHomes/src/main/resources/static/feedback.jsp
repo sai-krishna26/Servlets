@@ -194,6 +194,7 @@
 <form action="feedback" method="post">
 
     <h1><span style="color: green">${message}</span></h1>
+    <h1><span style="color: red">${fmessage}</span></h1>
 
     <div class="input-group mb-3">
       <span class="input-group-text">@</span>
