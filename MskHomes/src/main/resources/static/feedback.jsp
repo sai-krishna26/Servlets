@@ -191,6 +191,9 @@
 <br>
 
 
+
+
+
 <form action="feedback" method="post">
 
     <h1><span style="color: green">${message}</span></h1>
@@ -248,10 +251,7 @@
 
 </form>
 
-${message}
-<br>
-${important}
-<br>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

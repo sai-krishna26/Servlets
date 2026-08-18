@@ -1,4 +1,7 @@
 package com.xworkz.msk.dao;
 
-public class FeedBackDao {
+import com.xworkz.msk.entity.FeedBackEntity;
+
+public interface FeedBackDao {
+public boolean save(FeedBackEntity feedBackEntity);
 }

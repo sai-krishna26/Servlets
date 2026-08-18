@@ -1,8 +1,8 @@
 package com.xworkz.msk.servlet;
 
 import com.xworkz.msk.dto.FeedBackDto;
-import com.xworkz.msk.service.FeedBackService;
-import com.xworkz.msk.service.FeedBackServiceImpl;
+import com.xworkz.msk.service.feedback.FeedBackService;
+import com.xworkz.msk.service.feedback.FeedBackServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.xworkz.msk.service;
+package com.xworkz.msk.service.feedback;
 
 import com.xworkz.msk.dto.FeedBackDto;
 

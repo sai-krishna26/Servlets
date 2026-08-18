@@ -192,6 +192,7 @@
 <form action="signIn" method="post">
 
     <h1><span style="color: green">${successMessage}</span></h1>
+    <h1><span style="color: red">${errorMessage}</span></h1>
 
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">@</span>

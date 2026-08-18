@@ -1,8 +1,8 @@
 package com.xworkz.msk.servlet;
 
 import com.xworkz.msk.dto.SignInDto;
-import com.xworkz.msk.service.SignInService;
-import com.xworkz.msk.service.SignInServiceImpl;
+import com.xworkz.msk.service.signIn.SignInService;
+import com.xworkz.msk.service.signIn.SignInServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,13 +29,22 @@ public class SignInServlet extends HttpServlet {
         SignInDto signInDto=new SignInDto(username,password);
 
         SignInService signInService=new SignInServiceImpl();
-        signInService.validateAndSave(signInDto);
-        //System.out.println("signInDto:"+signInDto);
+        boolean result=signInService.validateAndSave(signInDto);
+        System.out.println("signInDto:"+signInDto);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
+        if(result) {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
 
-        req.setAttribute("successMessage", "Sign In Completed Successfully ");
+            req.setAttribute("successMessage", "Sign In Completed Successfully ");
 
-        requestDispatcher.forward(req,resp);
+            requestDispatcher.forward(req, resp);
+        }
+
+        else
+        {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
+            req.setAttribute("errorMessage", "Sign In Failed");
+            requestDispatcher.forward(req, resp);
+        }
     }
 }
