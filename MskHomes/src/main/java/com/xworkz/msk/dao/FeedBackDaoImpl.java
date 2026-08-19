@@ -27,6 +27,7 @@ public class FeedBackDaoImpl implements FeedBackDao {
             preparedStatement.setString(2, feedBackEntity.getName());
             preparedStatement.setString(3, feedBackEntity.getMobile());
             preparedStatement.setString(4, feedBackEntity.getComment());
+
             int rowsAffected = preparedStatement.executeUpdate();
             if(rowsAffected>0)
             {

@@ -1,8 +1,10 @@
 package com.xworkz.msk.entity;
 
+import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
 @Setter
 public class SignUpEntity {
     private String username;
