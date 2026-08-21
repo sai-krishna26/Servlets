@@ -1,0 +1,24 @@
+# Maven generated files
+target/
+
+# Maven wrapper JAR
+!.mvn/wrapper/maven-wrapper.jar
+
+# Kotlin
+.kotlin/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Smart Tomcat generated files
+.smarttomcat/
+
+# Tomcat generated files
+logs/
+work/
+
+# REDBUS has a separate GitHub repository
+REDBUS/

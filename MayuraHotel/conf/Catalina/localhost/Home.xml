@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="D:\Servlets\Servlets\MayuraHotel\static">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="D:/Servlets/Servlets/MayuraHotel/out/production/MayuraHotel" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="D:/softwares/apache-tomcat-9.0.38-windows-x64/apache-tomcat-9.0.38/lib/servlet-api.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/servlet-api.jar"/>
+  </Resources>
+</Context>
