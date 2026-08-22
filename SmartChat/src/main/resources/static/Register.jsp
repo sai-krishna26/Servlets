@@ -11,12 +11,16 @@
             href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
             rel="stylesheet"
     />
-    <title>Profile</title>
+    <title>Registration</title>
     <script
             defer
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
 </head>
+
+
+
+
 <body>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -25,7 +29,7 @@
         </a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" href="Register.jsp">
+        <a class="nav-link-active" href="Register.jsp">
             Registration
         </a>
     </li>
@@ -47,12 +51,12 @@
 </ul>
 
 
-<h3>Register</h3>
+
+
+
+<h3>Register Here</h3>
 <br>
 <form action="register" method="post">
-
-    <h3><span style="color: green">${successMessage}</span></h3>
-    <h3><span style="color: red">${errorMessage}</span></h3>
 
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">@</span>
@@ -77,15 +81,13 @@
 
     <br>
 
-    <button class="btn-53">Sign Up</button>
+    <button class="btn-53">Register</button>
 
 </form>
 
-${message}
-<br>
-${important}
-<br>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<!--${message}-->
+<!--<br>-->
+<!--${important}-->
 </body>
 </html>
 

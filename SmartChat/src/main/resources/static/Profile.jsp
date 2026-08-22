@@ -40,7 +40,7 @@
         </a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" href="Profile.jsp">
+        <a class="nav-link-item" href="Profile.jsp">
             Profile
         </a>
     </li>
