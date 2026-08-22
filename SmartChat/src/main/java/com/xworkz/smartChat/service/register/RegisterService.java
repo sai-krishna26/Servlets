@@ -1,4 +1,4 @@
-package com.xworkz.smartChat.service;
+package com.xworkz.smartChat.service.register;
 
 import com.xworkz.smartChat.dto.RegisterDto;
 

@@ -1,8 +1,8 @@
 package com.xworkz.smartChat.servlet;
 
 import com.xworkz.smartChat.dto.RegisterDto;
-import com.xworkz.smartChat.service.RegisterService;
-import com.xworkz.smartChat.service.RegisterServiceImpl;
+import com.xworkz.smartChat.service.register.RegisterService;
+import com.xworkz.smartChat.service.register.RegisterServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -43,10 +43,8 @@ public class RegisterServlet extends HttpServlet {
         RegisterService registerService=new RegisterServiceImpl();
         registerService.validateAndSave(registerDto);
 
-
         HttpSession session=req.getSession();
         session.setAttribute("username",username);
-        session.setAttribute("password",password);
 
         RequestDispatcher dispatcher=req.getRequestDispatcher("LogIn.jsp");
         dispatcher.forward(req, resp);

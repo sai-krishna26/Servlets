@@ -52,18 +52,18 @@
 
 <%
     String username = (String) session.getAttribute("username");
-    if (username != null) {
+    if (username == null) {
+    response.sendRedirect("Register.jsp");
+    return;
+    }else{
 %>
+    <br>
     <h3>Great, <%=username%>! keep going on by logging in</h3>
     <br>
 <%
-    } else {
+}
 %>
-    <h3>Login</h3>
-    <br>
-<%
-    }
-%>
+
 
 
 

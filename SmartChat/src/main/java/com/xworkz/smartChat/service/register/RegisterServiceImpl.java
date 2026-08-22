@@ -1,8 +1,8 @@
-package com.xworkz.smartChat.service;
+package com.xworkz.smartChat.service.register;
 
 import com.xworkz.smartChat.dto.RegisterDto;
 
-public class RegisterServiceImpl implements RegisterService{
+public class RegisterServiceImpl implements RegisterService {
     @Override
     public boolean validateAndSave(RegisterDto registerDto) {
         if(registerDto!=null)

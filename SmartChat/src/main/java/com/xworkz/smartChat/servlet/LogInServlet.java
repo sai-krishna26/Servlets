@@ -1,7 +1,10 @@
 package com.xworkz.smartChat.servlet;
 
 import com.xworkz.smartChat.dto.LogInDto;
+import com.xworkz.smartChat.service.logIn.LogInService;
+import com.xworkz.smartChat.service.logIn.LogInServiceImpl;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,9 +27,31 @@ public class LogInServlet extends HttpServlet {
         String username=req.getParameter("username");
         String password=req.getParameter("password");
 
-        String confirmUser=req.getParameter("");
+        String loginUser=req.getParameter("username");
+        String registerUser=(String)req.getSession().getAttribute("username");
 
+        if(registerUser==null)
+        {
+            req.setAttribute("errorMessage","Please register first before logging in");
+            RequestDispatcher requestDispatcher=req.getRequestDispatcher("Login.jsp");
+            requestDispatcher.forward(req, resp);
+            return;
+        }
         LogInDto logInDto=new LogInDto(username,password);
 
+        LogInService logInService=new LogInServiceImpl();
+        logInService.validateAndSave(logInDto);
+
+        if(loginUser!=null && loginUser.equalsIgnoreCase(registerUser))
+        {
+            RequestDispatcher dispatcher=req.getRequestDispatcher("Success.jsp");
+            dispatcher.forward(req, resp);
+        }
+        else
+        {
+            req.setAttribute("errorMessage","username is Invalid");
+            RequestDispatcher dispatcher=req.getRequestDispatcher("LogIn.jsp");
+            dispatcher.forward(req,resp);
+        }
     }
 }
